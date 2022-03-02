@@ -1,0 +1,2 @@
+data output to stderr
+data output to stdout

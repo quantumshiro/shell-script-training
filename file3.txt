@@ -1,0 +1,25 @@
+The ability to both recognise landmarks and to accurately estimate
+your own movement through space is traditionally one of the more
+difficult problems in robotics.  Usually this kind of thing is done
+using laser scanners or other high precision optics which are much too
+expensive to become practical consumer products, and also contain
+moving parts which could potentially fail during the rough-and-tumble
+of robotic life.
+
+A recent approach which may lead to some really good low cost
+applications is that taken by Andrew Davison.  His MonoSLAM system
+uses a single camera to detect and track a sparse number of landmark
+features, and also plot their position within a 3D map.  It's an
+interesting way of doing things because it involves forming a closed
+loop between the mapping and the feature detection.  Individual
+features are detected and inserted into the map, but then the map is
+also used to very specifically search for and re-acquire previously
+observed features.  Another nice feature of the system is that the
+camera can be freely moved in any manner - it's not restricted to only
+moving in certain ways (such as pan/tilt directions) - which means
+that it could potentially be attached to a robot having any degree of
+mechanical complexity.
+
+Davison's system presently only works on Linux, so I've done a Windows
+version rewritten using Visual C# 2005 in order to do some
+experiments.
